@@ -7,5 +7,8 @@ join coinCenters cc2
 on  cc2.imageID = cc1.imageID + 1
 and cc1.imageID % 2 = 0
 and cc2.imageID % 2 = 1
-and ((cc1.xMatch - cc2.x) * (cc1.xMatch - cc2.x)) + ((cc1.yMatch - cc2.y) * (cc1.yMatch - cc2.y)) < 5000
-order by 1
+and ((cc1.xMatch - cc2.x) * (cc1.xMatch - cc2.x)) + ((cc1.yMatch - cc2.y) * (cc1.yMatch - cc2.y)) < 200
+and cc1.x > 390
+and cc1.x <  880
+and cc1.imageID not in (select imageID from badImages) 
+order by 4
