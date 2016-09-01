@@ -1,3 +1,5 @@
+# This script crops the 2 camera images in batch
+
 import numpy as np
 import sqlite3
 import sys
@@ -27,7 +29,6 @@ def crop(num, x, y, radius):
     #cv2.imshow('crop', dst)
     #cv2.waitKey(0)
     return
-
 
 c = conn.cursor()
 c.execute("""Select
