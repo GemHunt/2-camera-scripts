@@ -27,9 +27,8 @@ for num in range(30000, 30050):
         circles = cv2.HoughCircles(img, cv.CV_HOUGH_GRADIENT, 1, 300, param1=50, param2=30, minRadius=350, maxRadius=357)
     else:
         # works on odd:
-        circles = cv2.HoughCircles(img, cv.CV_HOUGH_GRADIENT, 1, 300, param1=50, param2=30, minRadius=320, maxRadius=330)
+        #circles = cv2.HoughCircles(img, cv.CV_HOUGH_GRADIENT, 1, 300, param1=50, param2=30, minRadius=320, maxRadius=330)
         #This seems to work better:
-        #circles = cv2.HoughCircles(img, cv.CV_HOUGH_GRADIENT, 1, 300, param1=80, param2=20, minRadius=327, maxRadius=335)
         circles = cv2.HoughCircles(img,cv.CV_HOUGH_GRADIENT,1,300,param1=80,param2=20,minRadius=328,maxRadius=330)
 
     circles = np.uint16(np.around(circles))
